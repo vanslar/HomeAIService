@@ -1,6 +1,7 @@
 import os
 
 class Config:
+    LmsStudioServerHost = 'localhost:1234'
     LmsStudioModelName = 'deepseek-r1-distill-qwen-7b'
     #LmsStudioModelName = 'deepseek-r1-distill-qwen-1.5b'
 
