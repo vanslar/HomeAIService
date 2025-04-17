@@ -37,17 +37,25 @@
     @close="handleClose"
   >
 -->
-  <h5>HomeAI</h5>
   <el-menu
     default-active="2"
     class="el-menu-vertical-demo"
     @open="handleOpen"
     @close="handleClose"
+    router
   >
-  <el-menu-item index="0">
+    <el-menu-item index="/HomeView">
       <el-icon><HomeFilled /></el-icon>
       <template #title>Home</template>
     </el-menu-item>
+    <el-menu-item index="/HomeViewTest">
+      <el-icon><HomeFilled /></el-icon>
+      <template #title>HomeTest</template>
+    </el-menu-item>
+
+
+
+
     <el-sub-menu index="1">
       <template #title>
         <el-icon><location /></el-icon>

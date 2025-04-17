@@ -10,15 +10,15 @@ import NavView from './Views/NavView.vue';
         </el-aside>
         <el-container>
             <el-header>
-              header
+              <h3 style="text-align: left; margin-left: 0;">Welcome To HomeAI</h3>
             </el-header>
             <el-main>
-              <div id="main" style="width: 600px;height:400px">main</div>
-              main
+              <router-view />
             </el-main>
+<!--
             <el-footer>
-                Footer
             </el-footer>
+-->
       </el-container>
     </el-container>
   </div>
