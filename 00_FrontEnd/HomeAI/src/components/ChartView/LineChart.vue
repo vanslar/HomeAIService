@@ -21,9 +21,26 @@
         var dom = document.getElementById('main')
         var myChart = echarts.init(dom);
 
+        var option = {
+            xAxis: {
+                type: 'value',
+                data : lineChart_Data.x
+            },
+            yAxis: {},
+            series:[
+                {
+                    data: lineChart_Data.y,
+                    type: 'line'
+                }
+            ]
+        }
+
+        myChart.setOption(option)
     })
 </script>
 <template>
-    <div id="main" style="width: 100%;height:100%;"></div>
+    <div id="main" style="width: 800px;height:600px;"></div>
 </template>
-<style scoped></style>
+
+<style scoped>
+</style>

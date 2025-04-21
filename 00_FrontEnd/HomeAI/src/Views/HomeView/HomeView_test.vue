@@ -10,7 +10,6 @@
 
 <template>
     <div>
-        <h1>Test</h1>
         <LineChart :funcDataLoader="funcDataLoader" />
     </div>
 </template>

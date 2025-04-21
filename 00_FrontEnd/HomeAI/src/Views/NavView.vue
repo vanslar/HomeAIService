@@ -38,7 +38,7 @@
   >
 -->
   <el-menu
-    default-active="2"
+    default-active="/HomeView"
     class="el-menu-vertical-demo"
     @open="handleOpen"
     @close="handleClose"
@@ -90,8 +90,4 @@
 </template>
 
 <style scoped>
-    .el-menu-vertical-demo:not(.el-menu--collapse) {
-    width: 200px;
-    min-height: 400px;
-    }
 </style>
