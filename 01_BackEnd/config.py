@@ -1,17 +1,18 @@
 import os
 
 class Config:
-    LmsStudioServerHost = 'localhost:1234'
-    LmsStudioModelName = 'deepseek-r1-distill-qwen-7b'
-    #LmsStudioModelName = 'deepseek-r1-distill-qwen-1.5b'
+    #LmsStudioModelName = 'deepseek-r1-distill-qwen-7b'
+    LmsStudioModelName = 'deepseek-r1-distill-qwen-1.5b'
 
 class DevelopmentConfig(Config):
     DEBUG = True
+    LmsStudioServerHost = 'localhost:1234'
     RedisHost = 'localhost'
 
 
 class DockerConfig(Config):
     DEBUG = False
+    LmsStudioServerHost = 'host.docker.internal:1234'
     RedisHost = 'redis'
 
 if os.getenv('HOME_AI_SERVICE') == None:

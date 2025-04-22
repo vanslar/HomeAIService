@@ -1,0 +1,35 @@
+services:
+  web:
+    build: 
+      context: 01_BackEnd/
+      dockerfile: Dockerfile_Flask
+
+    ports:
+      - "8080:5001"
+
+    depends_on:
+      - redis
+##    volumes:
+##      - .:/code
+  celery:
+    build:
+      context: 01_BackEnd/
+      dockerfile: Dockerfile_Celery
+    command: celery -A CeleryTask worker -l info --pool threads
+#    command: ls -l
+
+#    networks:
+#      - redis-net
+    depends_on:
+      - redis
+
+  redis:
+    image: redis
+#    container_name: redis
+    ports:
+      - "6379:6379"
+#    networks:
+#      - redis-net
+
+#networks:
+#  redis-net:  
