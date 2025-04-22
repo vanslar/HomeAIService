@@ -7,6 +7,6 @@ RUN pip install -r requirements_flask.txt -i https://pypi.tuna.tsinghua.edu.cn/s
 # Expose the port that the application will run on
 EXPOSE 5001 
 
-ENV HOME_AI_SERVICE HOME_SERVICE_DOCKER
+ENV HOME_AI_SERVICE='HOME_SERVICE_DOCKER'
 # Start the application
 CMD ["python", "FlaskApp.py"]

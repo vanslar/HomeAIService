@@ -10,4 +10,4 @@ COPY config.py requirements_celery.txt /app/
 RUN pip install -r requirements_celery.txt -i https://pypi.tuna.tsinghua.edu.cn/simple/
 # Expose the port that the application will run on
 
-ENV HOME_AI_SERVICE HOME_SERVICE_DOCKER
+ENV HOME_AI_SERVICE='HOME_SERVICE_DOCKER'
