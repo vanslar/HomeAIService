@@ -48,6 +48,11 @@
       <el-icon><HomeFilled /></el-icon>
       <template #title>Home</template>
     </el-menu-item>
+    
+    <el-menu-item-group title="Group Two">
+      <el-menu-item index="1-3">item three</el-menu-item>
+    </el-menu-item-group>
+
     <el-menu-item index="/HomeViewTest">
       <el-icon><HomeFilled /></el-icon>
       <template #title>HomeTest</template>
