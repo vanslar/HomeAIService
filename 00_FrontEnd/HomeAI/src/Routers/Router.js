@@ -8,6 +8,12 @@ const routes = [
     },
 
     {
+        path: "/LLMChatView",
+        name: "LLMChatView",
+        component: () => import("../Views/AIService/LLMChatView.vue"),
+    },
+
+    {
         path: "/HomeViewTest",
         name: "HomeViewTest",
         component: () => import("../Views/HomeView/HomeView_test.vue"),

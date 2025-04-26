@@ -19,3 +19,11 @@ def ResponsePrompt():
         response = Task_ChatResponse.delay(prompt).get()
         return response 
     return "HELLO"
+
+
+@LLMService_blueprint.route('/ChatTest', methods=['GET', 'POST'])
+def ChatTest():
+    if request.method == 'POST':
+        prompt = request.form.get('prompt')
+        return prompt
+    return "HELLO"

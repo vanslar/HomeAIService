@@ -16,9 +16,11 @@ import NavView from './Views/NavView.vue';
               </div>
             </el-header>
             <el-main>
+              <router-view class="main-content"/>
+              <!--
               <div class="main-content">
-                <router-view />
               </div>
+-->
             </el-main>
 <!--
             <el-footer>
@@ -65,10 +67,12 @@ import NavView from './Views/NavView.vue';
   justify-content: space-around;
 }
 .main-content {
-  display: flex;
+/*  display: flex; 
   justify-content: center;
-/*  justify-items: center; */
+  justify-items: center; 
   align-items: center;
+*/
+  width: 100%;
 }
 
 

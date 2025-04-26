@@ -7,14 +7,6 @@
         Setting,
         HomeFilled
     } from '@element-plus/icons-vue'
-
-    const isCollapse = ref(true)
-    const handleOpen = (key, keyPath) => {
-    console.log(key, keyPath)
-    }
-    const handleClose = (key, keyPath) => {
-    console.log(key, keyPath)
-    }
 </script>
 
 <template>
@@ -40,8 +32,6 @@
   <el-menu
     default-active="/HomeView"
     class="el-menu-vertical-demo"
-    @open="handleOpen"
-    @close="handleClose"
     router
   >
     <el-menu-item index="/HomeView">
@@ -49,18 +39,27 @@
       <template #title>Home</template>
     </el-menu-item>
     
-    <el-menu-item-group title="Group Two">
-      <el-menu-item index="1-3">item three</el-menu-item>
-    </el-menu-item-group>
+    <el-sub-menu index="/LLMChatView">
+      <template #title>
+        <el-icon><IconMenu /></el-icon>
+        <span>AI Service</span>
+      </template>
+<!--
+      <el-menu-item-group title="AI Service">
+        <el-menu-item index="/LLMChatView">LLM Chat</el-menu-item>
+      </el-menu-item-group>
+-->
+      <el-menu-item index="/LLMChatView">LLM Chat</el-menu-item>
+    </el-sub-menu>
 
     <el-menu-item index="/HomeViewTest">
       <el-icon><HomeFilled /></el-icon>
-      <template #title>HomeTest</template>
+      <template #title>Line Chart</template>
     </el-menu-item>
 
 
 
-
+<!--
     <el-sub-menu index="1">
       <template #title>
         <el-icon><location /></el-icon>
@@ -91,8 +90,12 @@
       <el-icon><setting /></el-icon>
       <template #title>Navigator Four</template>
     </el-menu-item>
+-->
   </el-menu>
 </template>
 
 <style scoped>
+.el-menu-vertical-demo {
+    height: 100%;
+}
 </style>

@@ -31,5 +31,16 @@ services:
 #    networks:
 #      - redis-net
 
+  db:
+    image: postgres
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_DB=mydb
+      - POSTGRES_USER=myuser
+      - POSTGRES_PASSWORD=mypassword
+    volumes:
+      - /Volumes/PS2000/DB/Postgres_DB:/var/lib/postgresql/data
 #networks:
 #  redis-net:  
