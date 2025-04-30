@@ -11,7 +11,7 @@ def Home():
 @LLMService_blueprint.route('/ResponsePrompt', methods=['GET', 'POST'])
 def ResponsePrompt():
     if request.method == 'POST':
-        prompt = request.form.get('prompt')
+        prompt = request.json['prompt']
         response = Task_ChatResponse.delay(prompt).get()
         return response 
     elif request.method == 'GET':
@@ -24,6 +24,8 @@ def ResponsePrompt():
 @LLMService_blueprint.route('/ChatTest', methods=['GET', 'POST'])
 def ChatTest():
     if request.method == 'POST':
-        prompt = request.form.get('prompt')
-        return prompt
+        print('BACKEND: POST')
+        print( request.json)
+        prompt = request.json['prompt']
+        return 'POST TEST ' + prompt
     return "HELLO"

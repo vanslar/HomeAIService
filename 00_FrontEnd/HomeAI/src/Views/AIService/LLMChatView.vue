@@ -1,8 +1,7 @@
 <script setup>
 import { ref, reactive, nextTick } from 'vue'
 import { RequestInfo } from '../../Utils/WebIO.js'
-
-const LLMURL = 'http://127.0.0.1:5001/LLMService/ResponsePrompt'
+import { LLMChatURL } from '../../Utils/WebAPI.js'
 
 class ChatMessage{
     constructor(content, role){
@@ -24,7 +23,7 @@ const sendMessage = async () => {
         ViewData.messages.push(new ChatMessage(inputMessage.value, 'client'))
         //使能input按钮
         disableInputButtonRef.value = true
-        var post_response = await askLLM(LLMURL, 'POST', inputMessage.value)
+        var post_response = await askLLM(LLMChatURL, 'POST', inputMessage.value)
         ViewData.messages.push(new ChatMessage(post_response, 'model'))
 
         inputMessage.value = ''
